@@ -17,7 +17,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .card {
@@ -44,7 +43,6 @@ body {
   padding: 0 10px;
 }
 .container-question {
-  /* background-color: red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,12 +50,12 @@ body {
 }
 .answer {
   color: var(--grayish-purple);
-  font-size: 0px;
-  transition: 200ms;
-  /* overflow: hidden; */
+  font-size: 16px;
+  display: none;
+  margin-top: 10px;
 }
 .show-answer {
-  font-size: 16px;
+  display: inline-block;
 }
 .attribution {
   font-size: 11px;
@@ -79,7 +77,11 @@ body {
     margin-top: -200px;
   }
   .answer {
-    display: inline-block;
+    font-size: 16px;
+    display: none;
     max-width: 540px;
+  }
+  .show-answer {
+    display: inline-block;
   }
 }

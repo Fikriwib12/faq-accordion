@@ -1,24 +1,17 @@
-const btnShowAnswers = document.querySelectorAll(".btn-show-answer");
-const answers = document.querySelectorAll(".answer");
-const question = document.querySelectorAll(".question");
-question.forEach((qst, index) => {
-  qst.onclick = function () {
-    answers[index].classList.toggle("show-answer");
-    if (answers[index].classList.contains("show-answer")) {
-      btn.src = "assets/images/icon-minus.svg";
-    } else {
-      btn.src = "assets/images/icon-plus.svg";
-    }
-  };
-});
+const questionAnswers = document.querySelectorAll(".question-answer");
 
-btnShowAnswers.forEach((btn, index) => {
-  btn.onclick = function () {
-    answers[index].classList.toggle("show-answer");
-    if (answers[index].classList.contains("show-answer")) {
-      btn.src = "assets/images/icon-minus.svg";
-    } else {
-      btn.src = "assets/images/icon-plus.svg";
-    }
+questionAnswers.forEach((qa) => {
+  const btn = qa.querySelector(".btn-show-answer");
+  const answer = qa.querySelector(".answer");
+  const question = qa.querySelector(".question");
+
+  const toggleAnswer = () => {
+    answer.classList.toggle("show-answer");
+    btn.src = answer.classList.contains("show-answer")
+      ? "assets/images/icon-minus.svg"
+      : "assets/images/icon-plus.svg";
   };
+
+  btn.addEventListener("click", toggleAnswer);
+  question.addEventListener("click", toggleAnswer);
 });
