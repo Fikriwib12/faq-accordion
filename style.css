@@ -48,6 +48,12 @@ body {
   align-items: center;
   gap: 20px;
 }
+.question {
+  cursor: pointer;
+}
+.question:hover {
+  color: darkviolet;
+}
 .answer {
   color: var(--grayish-purple);
   font-size: 16px;
